@@ -14,22 +14,23 @@
                         </div>
                     @endif
 
+                    <a href="/students/create" class="btn btn-primary">Add Data</a> <br><br>
                     <table class="table table-responsive table-striped">
                         <thead>
                             <tr>
-                            <th>NIM</th>
-                            <th>Name</th>
-                            <th>Class</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($student as $s)
-                        <tr>
-                            <td>{{ $s->nim }}</td>
-                            <td>{{ $s->name }}</td>
-                            <td>{{ $s->class }}</td>
-                        </tr>
-                        @endforeach
+                                <th>NIM</th>
+                                <th>Name</th>
+                                <th>Class</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($student as $s)
+                            <tr>
+                                <td>{{ $s->nim }}</td>
+                                <td>{{ $s->name }}</td>
+                                <td>{{ $s->class }}</td>
+                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

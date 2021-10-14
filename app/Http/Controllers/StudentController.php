@@ -17,7 +17,6 @@ class StudentController extends Controller
         $students = Student::all();
         return view('students.index',['student'=>$students]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -25,7 +24,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('students.create');
     }
 
     /**
@@ -36,7 +35,13 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //add data
+        Student::create($request->all());
+        
+        // if true, redirect to index
+        return redirect()->route('students.index')
+            ->with('success', 'Add data success!');
+
     }
 
     /**
@@ -49,7 +54,6 @@ class StudentController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -60,7 +64,6 @@ class StudentController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -72,7 +75,6 @@ class StudentController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *
