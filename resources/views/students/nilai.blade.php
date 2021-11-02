@@ -8,9 +8,9 @@
             <div class="card-header" align="center"><b>{{ __('JURUSAN TEKNOLOGI INFORMASI POLITEKNIK NEGERI MALANG') }}</b></div>
 
                 <div class="card-body">
-                    
+                    <center>
                         <b>{{ __('KARTU HASIL STUDI (KHS)') }}</b>
-                    
+                    </center>
                     
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
@@ -22,7 +22,8 @@
                         Name : {{ $student->name }} <br> 
                         NIM : {{ $student->nim }} <br> 
                         Class : {{ $student->kelas->class_name }} <br>
-                       
+                        Department : {{ $student->department }} <br>
+                    </div>
 
                     <table class="table table-responsive table-striped">
                         <thead>
@@ -44,6 +45,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <a href="/students/{{$student->id}}/report" class="btn btn-primary" target="_blank">PRINT PDF</a>
                 </div>
             </div>
         </div>
