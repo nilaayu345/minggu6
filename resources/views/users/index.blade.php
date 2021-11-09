@@ -23,20 +23,22 @@
                         <th>Name</th>
                         <th>Username</th>
                         <td>Email</td>
+                        <th>Role</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($user as $s)
+                    @foreach($user as $u)
                 <tr>
-                    <td>{{ $s->id }}</td>
-                    <td>{{ $s->name }}</td>
-                    <td>{{ $s->username }}</td>
-                    <td>{{ $s->email }}</td>
+                    <td>{{ $u->id }}</td>
+                    <td>{{ $u->name }}</td>
+                    <td>{{ $u->username }}</td>
+                    <td>{{ $u->email }}</td>
+                    <td>{{ $u->role }}</td>
                     <td>
-                    <form action="/users/{{$s->id}}" method="post">
-                    <a href="/users/{{$s->id}}/edit" class="btn btn-warning">Edit</a>
-                    <a href="/users/{{$s->id}}" class="btn btn-info">View</a>
+                    <form action="/users/{{$u->id}}" method="post">
+                    <a href="/users/{{$u->id}}/edit" class="btn btn-warning">Edit</a>
+                    <a href="/users/{{$u->id}}" class="btn btn-info">View</a>
                     @csrf
                     @method('DELETE')
                     <button type="submit" name="delete" class="btn btn-danger">Delete</button>
